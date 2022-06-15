@@ -12,7 +12,7 @@ The evaluation on 17,532 tests from 21 projects (of which 689 are flaky) shows t
 
 ## Experiments
 ### Benchmark
-Before extracting contextual paths from flaky/non-flaky tests, a csv file contain the information of the flaky/non-flaky tests is required. Generate `FlakeFlagger_benchmark.csv` from the FlakeFlagger dataset through the following command:
+Before extracting contextual paths from flaky/non-flaky tests, a csv file contain the information of the flaky/non-flaky tests is required. Generate `FlakeFlagger_benchmark.csv` from the [FlakeFlagger](https://zenodo.org/record/4450723#.YqksxaFBx3s) dataset through the following command:
 ```shell
 python dataset/benchmark/transform_FlakeFlagger_dataset.py
 ```
@@ -58,4 +58,15 @@ python flaky_detect.py --predict_model <pretrained model> --predict_mode True
 ```
 
 ## Evaluation Results
-The training logs and the test results for 10 fold validation are released in `logs` and `outputs` directories respectively. More evaluation results can be found [here](https://doi.org/10.5281/zenodo.5401937).
+We apply 10-fold validation for evaluating *Peeler* on the whole dataset.
+- RQ1: The pretrained models for each fold, evaluation results, as well as the comparison results are released in directory `evaluation/10FoldCrossValidation`.
+- RQ2: The inner-file and inter-file ablation study results can be seen in `evaluation/ablation study`.
+
+In RQ3, *Peeler* is utilized for detecting previously-unknown flaky tests in real-world java projects, *Peeler* predicts 65 out of 1,835 tests as flaky in total, we report 21 of them, among which 12 have been accepted by developers, the links to the issues are as follows:
+- [https://github.com/google/guava/issues/5864](https://github.com/google/guava/issues/5864)
+- [https://github.com/google/guava/issues/5865](https://github.com/google/guava/issues/5865)
+- [https://github.com/google/guava/issues/5871](https://github.com/google/guava/issues/5871)
+
+For the remain 9 reports, the developers havn't yet reply to us, their links are:
+- [https://github.com/alibaba/fastjson/issues/4004](https://github.com/alibaba/fastjson/issues/4004)
+- [https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326](https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326)
