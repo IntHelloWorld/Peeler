@@ -33,6 +33,8 @@ python corpus/parse_corpus.py --file <corpus.txt file> --output_dir <output dir>
 ```
 Three files named `functions.txt`(edge information in paths), `samples.txt`(paths of each flaky/non-flaky tests) and `tokens.txt`(token dictionary) respectively will be generated under \<output dir\>.
 
+The processed corpus and dataset can be downloaded [here](https://pan.baidu.com/s/1WuxhiwHwOy0l0LhwxXZcqw?pwd=7mf3).
+
 ### Pretrained Embeddings
 We utilize pretrained [**code2vec**](https://github.com/tech-srl/code2vec) to generate embeddings for tokens and functions. The commands are:
 ```shell
@@ -58,7 +60,7 @@ python flaky_detect.py --predict_model <pretrained model> --predict_mode True
 ```
 
 ## Evaluation Results
-We apply 10-fold validation for evaluating *Peeler* on the whole dataset.
+We apply 10-fold validation for evaluating *Peeler* on the whole dataset, log in directory `logs`.
 - RQ1: The pretrained models for each fold, evaluation results, as well as the comparison results are released in directory `evaluation/10FoldCrossValidation`.
 - RQ2: The inner-file and inter-file ablation study results can be seen in `evaluation/ablation study`.
 
