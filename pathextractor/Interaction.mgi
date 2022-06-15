@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="pathextractor.Visitors.MethodDeclarationVisitor" x="888" y="92"/>
+    <CommunicationClass name="pathextractor.FeatureExtractTask" x="637" y="63">
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="m_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Features.MethodFeatures"/>
+        <Communication destinationClassName="pathextractor.FeatureExtractor"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Visitors.MyTreeVisitor" x="1176" y="265">
+        <Association destinationClassName="pathextractor.Features.ProgramRelation" endpointName="relations" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.App" x="679" y="-39">
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="s_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.FeatureExtractTask"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Visitors.ImportExprVisitor" x="914" y="179"/>
+    <CommunicationClass name="pathextractor.Visitors.FunctionVisitor" x="924" y="265">
+        <Association destinationClassName="pathextractor.Common.MethodContent" endpointName="m_Methods" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Common.Common"/>
+        <Communication destinationClassName="pathextractor.Visitors.MyTreeVisitor"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Features.MethodPath" x="220" y="485">
+        <Communication destinationClassName="pathextractor.Features.Element"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Features.Element" x="92" y="485"/>
+    <CommunicationClass name="pathextractor.Common.MethodContent" x="647" y="565">
+        <Association destinationClassName="pathextractor.Features.ProgramRelation" endpointName="relations" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Common.Common" x="940" y="488"/>
+    <CommunicationClass name="pathextractor.Features.ProgramRelation" x="65" y="376">
+        <Association destinationClassName="pathextractor.Features.Edge" endpointName="edge" kind="Simple"/>
+        <Association destinationClassName="pathextractor.Features.Element" endpointName="source" kind="Simple"/>
+        <Association destinationClassName="pathextractor.Features.Element" endpointName="target" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Features.MethodFeatures" x="203" y="225">
+        <Association destinationClassName="pathextractor.Features.MethodPath" endpointName="paths" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Features.Edge"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Features.Edge" x="236" y="374">
+        <Extension destinationClassName="pathextractor.Features.Element"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.FeatureExtractor" x="644" y="373">
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="m_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Common.MethodContent"/>
+        <Communication destinationClassName="pathextractor.Common.Common"/>
+        <Communication destinationClassName="pathextractor.Visitors.MethodDeclarationVisitor"/>
+        <Communication destinationClassName="pathextractor.Features.MethodFeatures"/>
+        <Communication destinationClassName="pathextractor.Features.Edge"/>
+        <Communication destinationClassName="pathextractor.Visitors.ImportExprVisitor"/>
+        <Communication destinationClassName="pathextractor.Visitors.FunctionVisitor"/>
+        <Communication destinationClassName="pathextractor.Features.MethodPath"/>
+    </CommunicationClass>
+    <CommunicationClass name="pathextractor.Common.CommandLineValues" x="809" y="565"/>
+    <CommunicationClass name="pathextractor.Features.programFeatures" x="64" y="302">
+        <Association destinationClassName="pathextractor.Features.MethodFeatures" endpointName="programPaths" kind="Simple"/>
+    </CommunicationClass>
+    <Note x="731" y="-39">Entrance Class</Note>
+</ClassDiagram>

@@ -1,0 +1,6 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "todo-tree.tree.showBadges": true,
+    "workbench.editor.wrapTabs": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+}

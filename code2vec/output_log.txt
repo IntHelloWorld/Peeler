@@ -1,0 +1,71 @@
+2021-05-18 21:36:01,581 INFO     
+2021-05-18 21:36:01,581 INFO     
+2021-05-18 21:36:01,581 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,581 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,581 INFO     ---------------------- Creating code2vec model ----------------------
+2021-05-18 21:36:01,581 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,581 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,581 INFO     Checking number of examples ...
+2021-05-18 21:36:01,581 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,581 INFO     ----------------- Configuration - Hyper Parameters ------------------
+2021-05-18 21:36:01,582 INFO     CODE_VECTOR_SIZE                          384
+2021-05-18 21:36:01,582 INFO     CSV_BUFFER_SIZE                           104857600
+2021-05-18 21:36:01,582 INFO     DEFAULT_EMBEDDINGS_SIZE                   128
+2021-05-18 21:36:01,582 INFO     DL_FRAMEWORK                              tensorflow
+2021-05-18 21:36:01,582 INFO     DROPOUT_KEEP_RATE                         0.75
+2021-05-18 21:36:01,582 INFO     EXPORT_CODE_VECTORS                       True
+2021-05-18 21:36:01,582 INFO     LOGS_PATH                                 None
+2021-05-18 21:36:01,582 INFO     MAX_CONTEXTS                              200
+2021-05-18 21:36:01,582 INFO     MAX_PATH_VOCAB_SIZE                       911417
+2021-05-18 21:36:01,582 INFO     MAX_TARGET_VOCAB_SIZE                     261245
+2021-05-18 21:36:01,582 INFO     MAX_TOKEN_VOCAB_SIZE                      1301136
+2021-05-18 21:36:01,582 INFO     MAX_TO_KEEP                               10
+2021-05-18 21:36:01,582 INFO     MODEL_LOAD_PATH                           models/java14_model/saved_model_iter8.release
+2021-05-18 21:36:01,582 INFO     MODEL_SAVE_PATH                           None
+2021-05-18 21:36:01,582 INFO     NUM_BATCHES_TO_LOG_PROGRESS               100
+2021-05-18 21:36:01,582 INFO     NUM_TEST_EXAMPLES                         0
+2021-05-18 21:36:01,582 INFO     NUM_TRAIN_BATCHES_TO_EVALUATE             1800
+2021-05-18 21:36:01,582 INFO     NUM_TRAIN_EPOCHS                          20
+2021-05-18 21:36:01,582 INFO     NUM_TRAIN_EXAMPLES                        0
+2021-05-18 21:36:01,582 INFO     PATH_EMBEDDINGS_SIZE                      128
+2021-05-18 21:36:01,582 INFO     PREDICT                                   True
+2021-05-18 21:36:01,582 INFO     READER_NUM_PARALLEL_BATCHES               6
+2021-05-18 21:36:01,582 INFO     RELEASE                                   False
+2021-05-18 21:36:01,583 INFO     SAVE_EVERY_EPOCHS                         1
+2021-05-18 21:36:01,583 INFO     SAVE_T2V                                  None
+2021-05-18 21:36:01,583 INFO     SAVE_W2V                                  None
+2021-05-18 21:36:01,583 INFO     SEPARATE_OOV_AND_PAD                      False
+2021-05-18 21:36:01,583 INFO     SHUFFLE_BUFFER_SIZE                       10000
+2021-05-18 21:36:01,583 INFO     TARGET_EMBEDDINGS_SIZE                    384
+2021-05-18 21:36:01,583 INFO     TEST_BATCH_SIZE                           1024
+2021-05-18 21:36:01,583 INFO     TEST_DATA_PATH                            
+2021-05-18 21:36:01,583 INFO     TOKEN_EMBEDDINGS_SIZE                     128
+2021-05-18 21:36:01,583 INFO     TOP_K_WORDS_CONSIDERED_DURING_PREDICTION  10
+2021-05-18 21:36:01,583 INFO     TRAIN_BATCH_SIZE                          1024
+2021-05-18 21:36:01,583 INFO     TRAIN_DATA_PATH_PREFIX                    None
+2021-05-18 21:36:01,583 INFO     USE_TENSORBOARD                           False
+2021-05-18 21:36:01,583 INFO     VERBOSE_MODE                              1
+2021-05-18 21:36:01,583 INFO     _Config__logger                           <Logger code2vec (INFO)>
+2021-05-18 21:36:01,583 INFO     context_vector_size                       384
+2021-05-18 21:36:01,583 INFO     entire_model_load_path                    models/java14_model/saved_model_iter8.release__entire-model
+2021-05-18 21:36:01,583 INFO     entire_model_save_path                    None
+2021-05-18 21:36:01,583 INFO     is_loading                                True
+2021-05-18 21:36:01,583 INFO     is_saving                                 False
+2021-05-18 21:36:01,583 INFO     is_testing                                False
+2021-05-18 21:36:01,583 INFO     is_training                               False
+2021-05-18 21:36:01,583 INFO     model_load_dir                            models/java14_model
+2021-05-18 21:36:01,583 INFO     model_weights_load_path                   models/java14_model/saved_model_iter8.release__only-weights
+2021-05-18 21:36:01,583 INFO     model_weights_save_path                   None
+2021-05-18 21:36:01,583 INFO     test_steps                                0
+2021-05-18 21:36:01,584 INFO     train_data_path                           None
+2021-05-18 21:36:01,584 INFO     train_steps_per_epoch                     0
+2021-05-18 21:36:01,584 INFO     word_freq_dict_path                       None
+2021-05-18 21:36:01,584 INFO     ---------------------------------------------------------------------
+2021-05-18 21:36:01,584 INFO     Loading model vocabularies from: `models/java14_model/dictionaries.bin` ... 
+2021-05-18 21:36:02,664 INFO     Done loading model vocabularies.
+2021-05-18 21:36:03,180 INFO     Done creating code2vec model
+2021-05-18 21:36:18,985 INFO     Initalized variables
+2021-05-18 21:36:18,992 INFO     Loading model weights from: models/java14_model/saved_model_iter8.release
+2021-05-18 21:36:20,097 INFO     Done loading model weights
+Starting interactive prediction...
+Modify the file: "Input.java" and press any key when ready, or "q" / "quit" / "exit" to exit

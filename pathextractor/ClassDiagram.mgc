@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="pathextractor.Visitors.MethodDeclarationVisitor" x="620" y="540">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="pathextractor.FeatureExtractTask" x="198" y="532">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="true" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="m_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Features.MethodFeatures"/>
+        <Communication destinationClassName="pathextractor.FeatureExtractor"/>
+    </Class>
+    <Class name="pathextractor.Visitors.MyTreeVisitor" x="667" y="457">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Features.ProgramRelation" endpointName="relations" kind="Simple"/>
+    </Class>
+    <Class name="pathextractor.App" x="572" y="381">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="s_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.FeatureExtractTask"/>
+        <Communication destinationClassName="pathextractor.FindTask"/>
+    </Class>
+    <Class name="pathextractor.Visitors.ImportExprVisitor" x="577" y="647">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="pathextractor.Visitors.FunctionVisitor" x="889" y="90">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Common.MethodContent" endpointName="m_Methods" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Common.Common"/>
+        <Communication destinationClassName="pathextractor.Visitors.MyTreeVisitor"/>
+    </Class>
+    <Class name="pathextractor.Features.Element" x="919" y="462">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="pathextractor.Features.MethodPath" x="420" y="204">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="pathextractor.Features.Element"/>
+    </Class>
+    <Class name="pathextractor.Common.Common" x="-118" y="559">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="true" accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="pathextractor.Common.MethodContent" x="684" y="84">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Features.ProgramRelation" endpointName="relations" kind="Simple"/>
+    </Class>
+    <Class name="pathextractor.Features.MethodFeatures" x="206" y="196">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Features.MethodPath" endpointName="paths" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Features.Edge"/>
+    </Class>
+    <Class name="pathextractor.Features.ProgramRelation" x="679" y="231">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Features.Edge" endpointName="edge" kind="Simple"/>
+        <Association destinationClassName="pathextractor.Features.Element" endpointName="source" kind="Simple">
+            <Point x="815" y="416"/>
+        </Association>
+        <Association destinationClassName="pathextractor.Features.Element" endpointName="target" kind="Simple">
+            <Point x="892" y="347"/>
+        </Association>
+    </Class>
+    <Class name="pathextractor.Features.Edge" x="920" y="210">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="pathextractor.Features.Element"/>
+    </Class>
+    <Class name="pathextractor.FeatureExtractor" x="-117" y="372">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="true" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Common.CommandLineValues" endpointName="m_CommandLineValues" kind="Simple"/>
+        <Communication destinationClassName="pathextractor.Common.MethodContent"/>
+        <Communication destinationClassName="pathextractor.Common.Common"/>
+        <Communication destinationClassName="pathextractor.Visitors.MethodDeclarationVisitor"/>
+        <Communication destinationClassName="pathextractor.Features.MethodFeatures"/>
+        <Communication destinationClassName="pathextractor.Features.Edge"/>
+        <Communication destinationClassName="pathextractor.Visitors.ImportExprVisitor"/>
+        <Communication destinationClassName="pathextractor.Visitors.FunctionVisitor"/>
+        <Communication destinationClassName="pathextractor.Features.MethodPath"/>
+    </Class>
+    <Class name="pathextractor.Common.CommandLineValues" x="292" y="328">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="pathextractor.Features.programFeatures" x="-124" y="213">
+        <AttributesDisplayFilter public-accepted="true" private-accepted="true" protected-accepted="true" default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true" private-accepted="false" protected-accepted="false" default-accepted="false" static-accepted="false" accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="pathextractor.Features.MethodFeatures" endpointName="programPaths" kind="Simple"/>
+    </Class>
+</ClassDiagram>

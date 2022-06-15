@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageAnalysis>
+    <Package name="pathextractor" x="539" y="61">
+        <DependencyLink destination="pathextractor.Common"/>
+        <DependencyLink destination="pathextractor.Features"/>
+        <DependencyLink destination="pathextractor.Visitors"/>
+    </Package>
+    <Package name="pathextractor.Common" x="876" y="500">
+        <DependencyLink destination="pathextractor.Features">
+            <Point x="595" y="609"/>
+        </DependencyLink>
+    </Package>
+    <Package name="pathextractor.Features" x="167" y="500">
+        <DependencyLink destination="pathextractor.Common">
+            <Point x="596" y="433"/>
+        </DependencyLink>
+    </Package>
+    <Package name="pathextractor.Visitors" x="518" y="314">
+        <DependencyLink destination="pathextractor.Common"/>
+        <DependencyLink destination="pathextractor.Features"/>
+    </Package>
+</PackageAnalysis>
