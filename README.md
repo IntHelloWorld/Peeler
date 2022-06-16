@@ -68,7 +68,10 @@ In RQ3, *Peeler* is utilized for detecting previously-unknown flaky tests in rea
 - [https://github.com/google/guava/issues/5864](https://github.com/google/guava/issues/5864)
 - [https://github.com/google/guava/issues/5865](https://github.com/google/guava/issues/5865)
 - [https://github.com/google/guava/issues/5871](https://github.com/google/guava/issues/5871)
+- [https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326](https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326)
 
 For the remain 9 reports, the developers havn't yet reply to us, their links are:
 - [https://github.com/alibaba/fastjson/issues/4004](https://github.com/alibaba/fastjson/issues/4004)
 - [https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326](https://github.com/GoogleCloudPlatform/DataflowTemplates/issues/326)
+
+Note that we reported 9 tests in the issue of project *DataflowTemplates*, one of them has been confirmed as flaky test and the remain 8 havn't been reproduced yet according to the developers.
