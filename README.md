@@ -22,28 +22,39 @@ Also, you can build your own dataset in the form of `FlakeFlagger_benchmark.csv`
 ### Corpus
 Once we got the benchmark, the features of flaky/non-flaky tests is able to be extracted by the *pathextractor*, which generates a TDG for each flaky/non-flaky method and extracts a set of contextual paths from it. Command:
 ```shell
-java -jar pathextractor/target/pathextractor-1.0-SNAPSHOT-jar-with-dependencies.jar --csvFile <benchmark csv file>  --projectsDir <projects dir> --output_dir <output dir>
+java -jar pathextractor/target/pathextractor-1.0-SNAPSHOT-jar-with-dependencies.jar --csvFile --projectsDir --output_dir
 ```
-A file named `corpus.txt` will be generated under \<output dir\>, which contains features of all flaky/non-flaky tests of the dataset.
+- `--csvFile`: the benchmark csv file contains the information of all the flaky/non-flaky tests. (e.g., `benchmark/FlakeFlagger_benchmark.csv`)
+- `--projectsDir`: the directory to the cloned projects in step **Benchmark**. (e.g., `~/projects`)
+- `--output_dir`: the directory where a file named `corpus.txt` will be generated, which contains features of all flaky/non-flaky tests of the dataset. (e.g., `corpus`)
 
 ### Dataset
 Parse `corpus.txt` to final dataset through command:
 ```shell
-python corpus/parse_corpus.py --file <corpus.txt file> --output_dir <output dir>
+python corpus/parse_corpus.py --file --output_dir
 ```
-Three files named `functions.txt`(edge information in paths), `samples.txt`(paths of each flaky/non-flaky tests) and `tokens.txt`(token dictionary) respectively will be generated under \<output dir\>.
+- `--file`: path to the `corpus.txt` generated in step **Corpus**. (e.g., `corpus/corpus.txt`)
+- `--output_dir`: the output directory. (e.g., `dataset`)
+
+Three files named `functions.txt`(edge information in paths), `samples.txt`(paths of each flaky/non-flaky tests) and `tokens.txt`(token dictionary) respectively will be generated under `output_dir`.
 
 The processed corpus and dataset can be downloaded [here](https://pan.baidu.com/s/1WuxhiwHwOy0l0LhwxXZcqw?pwd=7mf3).
 
 ### Pretrained Embeddings
 We utilize pretrained [**code2vec**](https://github.com/tech-srl/code2vec) to generate embeddings for tokens and functions. The commands are:
 ```shell
-python3 embeddings/method2embeddings.py --input_file <functions.txt> --code2vec_dir <code2vec project dir> --output_dir <output dir>
-python3 embeddings/tokens2embeddings.py --file <tokens.txt> --vecs <pretrained token embeddings> --output_dir <output dir>
-
+python3 embeddings/method2embeddings.py --input_file --code2vec_dir --output_dir
 ```
-The pretrained token embeddings we used can be downloaded [here](https://s3.amazonaws.com/code2vec/model/token_vecs.tar.gz), the pretrained model can be downloaded [here](https://s3.amazonaws.com/code2vec/model/java14m_model.tar.gz).
-`methods_embeddings.txt` and `tokens_embeddings.txt` will be generated under \<output dir\>.
+- `--input_file`: path to the `functions.txt` generated in step **Dataset**. (e.g., `dataset/functions.txt`)
+- `--code2vec_dir`: directory of the code2vec project, notice that we modify code2vec slightly for compatibility, the pretrained model can be downloaded [here](https://s3.amazonaws.com/code2vec/model/java14m_model.tar.gz). (e.g., `code2vec`)
+- `--output_dir`: the output directory where `methods_embeddings.txt` will be generated. (e.g., `embeddings`)
+
+```shell
+python3 embeddings/tokens2embeddings.py --file --vecs --output_dir
+```
+- `--file`: path to the `tokens.txt` generated in step **Dataset**. (e.g., `dataset/tokens.txt`)
+- `--vecs`: path to the pretrained token embedding file, which can be downloaded [here](https://s3.amazonaws.com/code2vec/model/token_vecs.tar.gz). (e.g., `code2vec/token_vecs.txt`)
+- `--output_dir`: the output directory where `tokens_embeddings.txt` will be generated. (e.g., `embeddings`)
 
 ### Train Peeler
 Run the following command to train a Peeler model from scratch, detailed parameters can be seen in `flaky_detect.py`:
@@ -56,8 +67,9 @@ Training logs will be found in `logs` directory.
 ### Evaluate Peeler
 Evaluate pretrained Peeler model through this command:
 ```shell
-python flaky_detect.py --predict_model <pretrained model> --predict_mode True
+python flaky_detect.py --predict_model --predict_mode True
 ```
+- `--predict_model`: path to the pretrained model file. (e.g., `evaluation/10FoldCrossValidation/b64_encode384_pl20_pc100_hd128_tv256_lr001_10FoldCrossValidationcross_0.model`)
 
 ## Evaluation Results
 We apply 10-fold validation for evaluating *Peeler* on the whole dataset, log in directory `logs`.
