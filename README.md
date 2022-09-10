@@ -1,5 +1,5 @@
 # Online Repository for ICSME'2022 Paper "PEELER: Learning to Effectively Predict Flakiness without Running Tests"
-
+The DOI of the repository is [10.5281/zenodo.7066904](https://zenodo.org/record/7066904#.YxyU7qFByS4).
 ## Summary
 *Peeler* is a fully static flaky tests detector that relies on data dependency in a Test Dependency Graph. *Peeler* captures test flakiness by modeling how the values of the variables involved in assertion statements are transferred as reflected in the embedded contextual paths. 
 The evaluation on 17,532 tests from 21 projects (of which 689 are flaky) shows that *Peeler* outperforms prior works by about 20% in terms of Precision and F-score. During a live study, *Peelr* has already helped developers identify 12 flaky test cases in real-world project test suites.
